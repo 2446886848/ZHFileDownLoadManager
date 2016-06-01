@@ -243,6 +243,7 @@
         [self.downLoadTask resume];
     }];
 }
+
 - (void)cancel
 {
     [[ZHFileDownLoadManager manager].downLoadQueue addOperationWithBlock:^{
@@ -264,6 +265,28 @@
                           r[11], r[12], r[13], r[14], r[15], [[key pathExtension] isEqualToString:@""] ? @"" : [NSString stringWithFormat:@".%@", [key pathExtension]]];
     
     return filename;
+}
+
+- (ZHFileDownLoadTaskStatus)status
+{
+    switch (self.downLoadTask.state) {
+        case NSURLSessionTaskStateRunning:
+            return ZHFileDownLoadTaskStatusRunning;
+            break;
+        case NSURLSessionTaskStateSuspended:
+            return ZHFileDownLoadTaskStatusSuspended;
+            break;
+        case NSURLSessionTaskStateCanceling:
+            return ZHFileDownLoadTaskStatusCanceling;
+            break;
+        case NSURLSessionTaskStateCompleted:
+            return ZHFileDownLoadTaskStatusRunning;
+            break;
+            
+        default:
+            return ZHFileDownLoadTaskStatusCompleted;
+            break;
+    }
 }
 
 - (NSString *)resumeDataCacheDirectory
