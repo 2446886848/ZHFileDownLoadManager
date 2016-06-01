@@ -13,6 +13,7 @@
 		E85A96A51CFD2C6C0024475B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85A96A31CFD2C6C0024475B /* Main.storyboard */; };
 		E85A96A71CFD2C6C0024475B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85A96A61CFD2C6C0024475B /* Assets.xcassets */; };
 		E85A96AA1CFD2C6C0024475B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85A96A81CFD2C6C0024475B /* LaunchScreen.storyboard */; };
+		E85A96B41CFD2DB80024475B /* ZHFileDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E85A96B31CFD2DB80024475B /* ZHFileDownLoadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E85A96A61CFD2C6C0024475B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E85A96A91CFD2C6C0024475B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E85A96AB1CFD2C6C0024475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85A96B21CFD2DB80024475B /* ZHFileDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFileDownLoadManager.h; sourceTree = "<group>"; };
+		E85A96B31CFD2DB80024475B /* ZHFileDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFileDownLoadManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		E85A96991CFD2C6C0024475B /* ZHFileDownLoadManager */ = {
 			isa = PBXGroup;
 			children = (
+				E85A96B11CFD2CD20024475B /* ZHFileDownLoadManager */,
 				E85A969D1CFD2C6C0024475B /* AppDelegate.h */,
 				E85A969E1CFD2C6C0024475B /* AppDelegate.m */,
 				E85A96A01CFD2C6C0024475B /* ViewController.h */,
@@ -77,6 +81,15 @@
 				E85A969B1CFD2C6C0024475B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E85A96B11CFD2CD20024475B /* ZHFileDownLoadManager */ = {
+			isa = PBXGroup;
+			children = (
+				E85A96B21CFD2DB80024475B /* ZHFileDownLoadManager.h */,
+				E85A96B31CFD2DB80024475B /* ZHFileDownLoadManager.m */,
+			);
+			path = ZHFileDownLoadManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +165,7 @@
 				E85A96A21CFD2C6C0024475B /* ViewController.m in Sources */,
 				E85A969F1CFD2C6C0024475B /* AppDelegate.m in Sources */,
 				E85A969C1CFD2C6C0024475B /* main.m in Sources */,
+				E85A96B41CFD2DB80024475B /* ZHFileDownLoadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
