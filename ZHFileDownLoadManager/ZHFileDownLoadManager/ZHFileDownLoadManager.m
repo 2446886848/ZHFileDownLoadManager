@@ -86,6 +86,8 @@
         [request setValue:@"application/json;text/plain;text/javascript;text/json;text/html" forHTTPHeaderField:@"Content-Type"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
         
+        self.downLoadedLength = [self fileSizeForPath:self.localFilePath];
+        
         if (self.downLoadedLength > 0) {
             NSString *requestRange = [NSString stringWithFormat:@"bytes=%llu-", self.downLoadedLength];
             [request setValue:requestRange forHTTPHeaderField:@"Range"];
@@ -139,8 +141,6 @@
             [self.dataTask cancel];
         }
     }
-    
-    self.downLoadedLength = [self fileSizeForPath:localFilePath];
 }
 
 - (void)receivedData:(NSData *)data
@@ -208,7 +208,7 @@
 - (instancetype)initWithUrl:(NSURL *)remoteFileUrl progressCallBack:(BackgroundDownLoadProgressCallBack)progressCallBack completeCallBack:(BackgroundDownLoadCompleteCallBack)completeCallBack
 {
     if (self = [super init]) {
-        self.remoteFileUrl = remoteFileUrl;
+        _remoteFileUrl = remoteFileUrl;
         _progressCallBack = [progressCallBack copy];
         _completeCallBack = [completeCallBack copy];
     }
@@ -480,6 +480,7 @@ didCompleteWithError:(nullable NSError *)error
             }
         }
     }
+    [downLoadTask receivedData:data];
 }
 
 #pragma mark - NSURLSessionDownloadDelegate
